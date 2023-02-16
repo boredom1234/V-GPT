@@ -28,8 +28,7 @@ function activateSpeechRecognition() {
     const voices = synthesis.getVoices();
     for (let i = 0; i < voices.length; i++) {
       const v = voices[i];
-      //if (v.name === "Microsoft Ryan Online (Natural) - English (United Kingdom)") {
-      if (v.voiceURI === "Google US English") {
+      if (v.name === "Microsoft Ryan Online (Natural) - English (United Kingdom)") {
         voice = v;
         utterance.voice = voice;
         break;
@@ -55,7 +54,7 @@ function activateSpeechRecognition() {
       body: JSON.stringify({
         prompt: conversation,
         temperature: 0.7,
-        max_tokens: 256,
+        max_tokens: 4000,
         top_p: 1,
         frequency_penalty: 0,
         presence_penalty: 0
@@ -68,7 +67,7 @@ function activateSpeechRecognition() {
       responseStr = responseStr.split(`${userName}:`, 1)[0].split(`${botName}:`, 1)[0];
       conversation += `${responseStr}\n`;
       console.log("\n" + responseStr);
-      utterance.text = responseStr;
+      utterance.text = responseStr.replace(/^/gm, "\n");
       synthesis.speak(utterance);
 
       // Update the output textarea
@@ -82,17 +81,29 @@ function activateSpeechRecognition() {
 
   recognition.onstart = () => {
     console.log('Listening...');
-    document.getElementById("start-button").value="New Button Text";
   };
 
   recognition.onend = () => {
     console.log('No longer listening');
+    if(fetch){
+      console.log("Thinking?");
+      var button = document.getElementById("status");
+      button.value = "Thinking?";
+    }
   };
 
   recognition.start();
 
+  if(fetch){
+    setTimeout(printDone, 8000);
+  }
+
   window.addEventListener("beforeunload", () => {
     synthesis.cancel();
   });
-  
+}
+
+function printDone() {
+  var button = document.getElementById("status");
+  button.value = "Done";
 }

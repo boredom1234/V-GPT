@@ -1,4 +1,5 @@
 function sendMessage() {
+    let status = false;
     let message = "";
     const userName = "You:  ";
     const botName = "AI:  ";
@@ -14,8 +15,8 @@ function sendMessage() {
       },
       body: JSON.stringify({
         prompt: message,
-        temperature: 0.7,
-        max_tokens: 2080,
+        temperature: 1.0,
+        max_tokens: 4000,
         top_p: 1,
         frequency_penalty: 0,
         presence_penalty: 0,
@@ -31,8 +32,19 @@ function sendMessage() {
 
         const inputTextarea = document.getElementById("output");
         inputTextarea.value += message + "\n";
+        status = true;
     })
       .catch((error) => {
         console.error(error);
     });
+    if(fetch){
+      console.log("Thinking?");
+      var button = document.getElementById("status");
+      button.value = "Thinking?";
+    }
+    setTimeout(printDone, 8000);
+}
+function printDone() {
+  var button = document.getElementById("status");
+  button.value = "Done";
 }
