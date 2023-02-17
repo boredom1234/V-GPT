@@ -14,6 +14,7 @@ function activateSpeechRecognition() {
   const userName = "You:  ";
   const botName = "AI:  ";
 
+  utterance.voice = synthesis.getVoices()[107];
   recognition.lang = 'en-US';
   utterance.lang = 'en-US'; // set the language of the utterance
 
@@ -81,6 +82,8 @@ function activateSpeechRecognition() {
 
   recognition.onstart = () => {
     console.log('Listening...');
+    var button = document.getElementById("status");
+      button.value = "Listening?";
   };
 
   recognition.onend = () => {

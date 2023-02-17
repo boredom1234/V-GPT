@@ -37,6 +37,13 @@ body {
   box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.3);
 }
 
+.status-box{
+  justify-content: center;
+  align-items: center;
+  padding-left: 830px;
+  padding-top: 10px;
+}
+
 #input-field {
   flex: 1;
   height: 30px;

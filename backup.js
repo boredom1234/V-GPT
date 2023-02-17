@@ -81,6 +81,8 @@ function activateSpeechRecognition() {
 
   recognition.onstart = () => {
     console.log('Listening...');
+    var button = document.getElementById("status");
+      button.value = "Listening?";
   };
 
   recognition.onend = () => {
