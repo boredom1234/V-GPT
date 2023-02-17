@@ -41,6 +41,7 @@ function sendMessage() {
       console.log("Thinking?");
       var button = document.getElementById("status");
       button.value = "Thinking?";
+      inputField.value="";
     }
     setTimeout(printDone, 8000);
 }
