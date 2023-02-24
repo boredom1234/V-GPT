@@ -1,5 +1,17 @@
-canvas {
-	position: absolute;
-	top: 0;
-	left: 0;
-}
+body {
+    display: grid;
+    place-items: center;
+    height: 100vh;
+    background-color: #18181c;
+    margin: 0rem;
+    overflow: hidden;
+  }
+  
+  h1 {
+    font-family: 'Space Mono', monospace;
+    font-size: clamp(3rem, 10vw, 10rem);
+    color: white;
+    padding: 0rem clamp(1rem, 2vw, 3rem);
+    border-radius: clamp(0.4rem, 0.75vw, 1rem);
+  }
+  

@@ -1,22 +1,26 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>What?</title>
-  <script src="voice.js"></script>
-  <script src="chat.js"></script>
-  <link rel="stylesheet" type="text/css" href="style-main.css">
-  <link rel="icon" type="image/png" href="favicon-32x32.png">
+  <title>HORIZON.ai</title>
+  <script src="./js/voice.js"></script>
+  <script src="./js/chat.js"></script>
+  <link rel="stylesheet" type="text/css" href="./styles/style-main.css">
+  <link rel="stylesheet" type="text/css" href="./styles/effect.css">
+  <link rel="icon" type="image/png" href="icons8-blackhole-96.png">
 
 </head>
 <body>
-  <header><h1>Name.ai</h1></header>
+  <div class="logo">
+    <img src="icons8-blackhole-48.png">
+  </div>
+  <header><h1 data-value="HORIZON.ai">HORIZON.ai</h1></header>
   <div class="container">
     <div class="chat-box" id="chat-box">
-      <p><strong>Jin Kazama</strong></p>
+      <p><strong><br><br><br><br><br><br><br><br><br><br></strong></p>
     </div>
     <div class="input-box">
-      <input type="text" id="input-field" placeholder="Type Here...">
-      <button id="send-button" onclick="sendMessage()">➡️</button>
+      <input type="text" id="input-field" placeholder="Ask anything...">
+      <button id="send-button" onclick="sendMessage()">🔍</button>
       <button id="start-button" onclick="activateSpeechRecognition()">🎙️</button>
       <script>
         var input = document.getElementById("input-field");
@@ -31,12 +35,13 @@
       </script>
     </div>
     <div class="output-box">
-      <textarea id="output" rows="10" disabled placeholder="Results here..." ></textarea>
+      <textarea id="output" rows="15" disabled placeholder="Results here..." ></textarea>
     </div>
     <div class="status-box">
       <textarea id="status" rows="1" disabled></textarea>
     </div>
 
   </div>
+  <script src="./js/effect.js"></script>
 </body>
 </html>

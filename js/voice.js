@@ -68,7 +68,7 @@ function activateSpeechRecognition() {
       responseStr = responseStr.split(`${userName}:`, 1)[0].split(`${botName}:`, 1)[0];
       conversation += `${responseStr}\n`;
       console.log("\n" + responseStr);
-      utterance.text = responseStr.replace(/^/gm, "\n") + ".........Here are a few additional online sources.";
+      utterance.text = responseStr.replace(/^/gm, "\n") + ".........And here are a few additional online sources, if you want to have a look at.";
       synthesis.speak(utterance);
 
       // Update the output textarea
