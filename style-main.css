@@ -1,3 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Mynerve&display=swap');
+
+header{
+  font-family: 'Mynerve', cursive;
+  text-align: center;
+  font-size: 40px;
+  margin: 0px;
+}
+
+header h1{
+  margin-bottom:0px;
+}
+
 body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
   margin: 0;
@@ -9,45 +22,55 @@ body {
 .container {
   display: flex;
   flex-direction: column;
-  height: 100vh;
+  padding:10px 30px 10px 30px;
 }
 
 .chat-box {
   flex: 1;
   display: flex;
   flex-direction: column;
-  padding: 10px;
-  overflow-y: scroll;
-  background-color: #2F3136;
-  border-radius: 10px;
-  box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.3);
+  padding: 0px;
+  overflow-y: auto;
 }
 
 .chat-box p {
-  margin: 0 0 10px 0;
+  padding: 0px;
   text-align: center;
-  font-size: 50px;
+  font-size: 18px;
+}
+
+.output-box{
+  margin: 5px;
+  width: 100%;
 }
 
 .input-box {
   display: flex;
-  margin: 10px;
+  margin: 5px;
+  margin-left: 12px;
   background-color: #2F3136;
   border-radius: 10px;
   box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.3);
+  position: relative;
+  width: 98.9%;
+}
+
+#send-button{
+  position: absolute;
+  top:0;
+  right:0;
+  bottom: 0;
 }
 
 .status-box{
   justify-content: center;
   align-items: center;
-  padding-left: 830px;
-  padding-top: 10px;
+  text-align: center;
 }
 
 #input-field {
   flex: 1;
-  height: 30px;
-  margin-right: 10px;
+  height: 30px; 
   padding: 5px;
   border: none;
   font-size: 14px;
@@ -58,13 +81,13 @@ body {
 
 button {
   height: 40px;
-  padding: 5px 10px;
+  padding: 5px 16px;
   border: none;
   background-color: #7289DA;
   color: #FFF;
   cursor: pointer;
   font-size: 14px;
-  border-radius: 10px;
+  border-radius: 1px;
   box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.3);
 }
 
@@ -76,7 +99,7 @@ button:hover {
   margin: 5px;
   padding: 5px;
   border: 1px solid #7289DA;
-  border-radius: 5px;
+  border-radius: 2px;
   width: 98%;
   resize: none;
   background-color: #2F3136;
@@ -85,15 +108,19 @@ button:hover {
 }
 
 #start-button {
-  margin: 20px;
-  padding: 3px 8px;
+  position: absolute;
+  top:0;
+  right:0;
+  bottom: 0;
+  margin-right: 50px; /*space between buttons*/
+  padding: 0px 7px;
   border: none;
   background-color: #7289DA;
   color: #FFF;
   cursor: pointer;
   font-size: 24px;
   text-align: center;
-  border-radius: 10px;
+  border-radius: 1px;
   box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.3);
 }
 

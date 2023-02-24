@@ -6,15 +6,18 @@
   <script src="chat.js"></script>
   <link rel="stylesheet" type="text/css" href="style-main.css">
   <link rel="icon" type="image/png" href="favicon-32x32.png">
+
 </head>
 <body>
+  <header><h1>Name.ai</h1></header>
   <div class="container">
     <div class="chat-box" id="chat-box">
-      <p><strong>What?</strong></p>
+      <p>Welcome to the Chat Room</p>
     </div>
     <div class="input-box">
       <input type="text" id="input-field" placeholder="Type Here...">
       <button id="send-button" onclick="sendMessage()">➡️</button>
+      <button id="start-button" onclick="activateSpeechRecognition()">🎙️</button>
       <script>
         var input = document.getElementById("input-field");
         input.addEventListener("keypress", function(event) {
@@ -33,7 +36,7 @@
     <div class="status-box">
       <textarea id="status" rows="1" disabled></textarea>
     </div>
-    <button id="start-button" onclick="activateSpeechRecognition()">🎙️</button>
+
   </div>
 </body>
 </html>
