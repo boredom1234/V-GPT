@@ -9,7 +9,7 @@ OPENAI 👈He said this.
 
 ## View Live Here
 
-https://assistgpt.netlify.app/
+https://horizonai.netlify.app/
 
 
 ## Environment Variables
@@ -17,6 +17,7 @@ https://assistgpt.netlify.app/
 To run this project, you will need to add the following environment variables to your `voice.js` and `chat.js` files.
 
 `OPENAI_API_KEY` <-You can get it from `https://openai.com/api/`>
+`GoogleSearchAPIKey`
 
 
 ## Installation
