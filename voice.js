@@ -68,12 +68,29 @@ function activateSpeechRecognition() {
       responseStr = responseStr.split(`${userName}:`, 1)[0].split(`${botName}:`, 1)[0];
       conversation += `${responseStr}\n`;
       console.log("\n" + responseStr);
-      utterance.text = responseStr.replace(/^/gm, "\n");
+      utterance.text = responseStr.replace(/^/gm, "\n") + ".........Here are a few additional online sources.";
       synthesis.speak(utterance);
 
       // Update the output textarea
       const inputTextarea = document.getElementById("output");
       inputTextarea.value += conversation + "\n";
+
+       // Fetch response from GoogleSearchAPI
+       fetch(`https://www.googleapis.com/customsearch/v1?key=AIzaSyBoLC8MJEULWEmgOLPZKWjWfcohYpigr8M&cx=56469cba6f5504b7d&q=${userInput}`)
+       .then(response => response.json())
+       .then(data => {
+         let items = data.items;
+         let message = `[]4 Sources:\n`;
+         for (let i = 0; i < 4; i++) {
+           let result = items[i];
+           let link = result.link;
+           let title = result.title;
+           message += `  ${i+1}. ${title}: ${link}\n`;
+           console.log(`${title}: ${link}`);
+         }
+         inputTextarea.value += message + "\n";
+       })
+
     })
     .catch(error => {
       console.error(error);
