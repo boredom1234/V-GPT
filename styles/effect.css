@@ -1,7 +1,7 @@
 h1 {
     font-family: 'Space Mono', monospace;
     font-size: clamp(3.5rem, 5vw, 5rem);
-    color: white;
+    color: whitesmoke;
     padding: 0rem clamp(1rem, 2vw, 3rem);
     border-radius: clamp(0.4rem, 0.75vw, 1rem);
     text-align: center;
