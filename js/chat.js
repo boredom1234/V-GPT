@@ -16,7 +16,7 @@ function sendMessage() {
     },
     body: JSON.stringify({
       prompt: message,
-      temperature: 0.4,
+      temperature: 0.6,
       max_tokens: 4000,
       top_p: 1,
       frequency_penalty: 0,
