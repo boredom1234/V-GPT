@@ -9,7 +9,7 @@ OPENAI 👈He said this.
 
 ## View Live Here
 
-https://horizonai.netlify.app/
+https://horizon-ai.vercel.app/
 
 
 ## Environment Variables
