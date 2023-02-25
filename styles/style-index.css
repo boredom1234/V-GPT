@@ -2,7 +2,7 @@ body {
     display: grid;
     place-items: center;
     height: 100vh;
-    background-color: #18181c;
+    background-image: linear-gradient(to top, #18181c 0%, #27272e 100%);
     margin: 0rem;
     overflow: hidden;
   }
