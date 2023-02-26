@@ -13,6 +13,12 @@
   <div class="logo" ondrag="deleteEverything()">
     <img src="icons8-blackhole-48.png">
   </div>
+    <div class="github-ico" onclick="visitGithub()">
+      <img src = "github-icon.png" alt="github"/>
+    </div>
+    <div class="us-ico" onclick="visitUs()">
+      <img src = "link-icon.png" alt="us"/>
+    </div>
   <header><h1 data-value="HORIZON.ai">HORIZON.ai</h1></header>
   <div class="container">
     <div class="chat-box" id="chat-box">
@@ -49,6 +55,17 @@
       localStorage.removeItem("output");
     }
   </script>
+    <script>
+      function visitGithub(){
+        window.open("https://github.com/boredom1234/V-GPT");
+      }
+     </script>
+    <script>
+      function visitUs(){
+        //window.open("https://www.google.com", "_blank", "width=600,height=400");
+        //window.open("https://www.youtube.com", "_blank", "width=600,height=400");
+      }
+    </script>
   <script src="./js/effect.js"></script>
 </body>
 </html>
