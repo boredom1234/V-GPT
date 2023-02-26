@@ -10,7 +10,7 @@
 
 </head>
 <body>
-  <div class="logo">
+  <div class="logo" ondrag="deleteEverything()">
     <img src="icons8-blackhole-48.png">
   </div>
   <header><h1 data-value="HORIZON.ai">HORIZON.ai</h1></header>
@@ -41,8 +41,14 @@
       <br>
       <textarea id="status" rows="1" disabled></textarea>
     </div>
-
   </div>
+  <script>
+    function deleteEverything(){
+      const out = document.getElementById("output");
+      out.value = "";
+      localStorage.removeItem("output");
+    }
+  </script>
   <script src="./js/effect.js"></script>
 </body>
 </html>

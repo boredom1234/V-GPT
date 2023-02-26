@@ -2,7 +2,7 @@ function sendMessage() {
   let status = false;
   let message = "";
   const userName = "You:  ";
-  const botName = "AI:  ";
+  const botName = "Horizon:  ";
   const inputField = document.getElementById("input-field");
   let input = inputField.value;
   message += input;
@@ -31,16 +31,16 @@ function sendMessage() {
       message += `${responseStr}\n`;
       console.log("\n" + responseStr);
 
-      const inputTextarea = document.getElementById("output");
-      inputTextarea.value += message + "\n";
-      status = true;
+      const outputTextarea = document.getElementById("output");
+      outputTextarea.value += message + "\n";
+      saveToLocalStorage(outputTextarea.value);
 
       // Fetch response from GoogleSearchAPI
-      fetch(`https://www.googleapis.com/customsearch/v1?key=AIzaSyBoLC8MJEULWEmgOLPZKWjWfcohYpigr8M&cx=56469cba6f5504b7d&q=${input}`)
+      fetch(`https://www.googleapis.com/customsearch/v1?key=AIzaSyBoLC8MJEULWEmgOLPZKWjWfcohYpigr8M&cx=56469cba6f5504b7d&q=${userInput}`)
         .then((response) => response.json())
         .then((data) => {
           let items = data.items;
-          let message = `[]4 Sources:\n`;
+          let message = `[🕸️]4 Sources:\n`;
           for (let i = 0; i < 4; i++) {
             let result = items[i];
             let link = result.link;
@@ -48,7 +48,8 @@ function sendMessage() {
             message += `  ${i+1}. ${title}: ${link}\n`;
             console.log(`${title}: ${link}`);
           }
-          inputTextarea.value += message + "\n";
+          outputTextarea.value += message + "\n";
+          saveToLocalStorage(outputTextarea.value);
         })
         .catch((error) => {
           console.error(error);
@@ -71,3 +72,17 @@ function printDone() {
   var button = document.getElementById("status");
   button.value = "Done";
 }
+
+function saveToLocalStorage(output) {
+  localStorage.setItem("output", output);
+}
+
+function loadFromLocalStorage() {
+  const outputTextarea = document.getElementById("output");
+  const output = localStorage.getItem("output");
+  if (output) {
+    outputTextarea.value = output;
+  }
+}
+
+window.onload = loadFromLocalStorage;

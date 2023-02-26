@@ -71,16 +71,19 @@ function activateSpeechRecognition() {
       utterance.text = responseStr.replace(/^/gm, "\n") + ".........And here are a few additional online sources, if you want to have a look at.";
       synthesis.speak(utterance);
 
+
+
       // Update the output textarea
       const inputTextarea = document.getElementById("output");
       inputTextarea.value += conversation + "\n";
+      saveToLocalStorage(inputTextarea.value);
 
        // Fetch response from GoogleSearchAPI
        fetch(`https://www.googleapis.com/customsearch/v1?key=AIzaSyBoLC8MJEULWEmgOLPZKWjWfcohYpigr8M&cx=56469cba6f5504b7d&q=${userInput}`)
        .then(response => response.json())
        .then(data => {
          let items = data.items;
-         let message = `[]4 Sources:\n`;
+         let message = `[🕸️]4 Sources:\n`;
          for (let i = 0; i < 4; i++) {
            let result = items[i];
            let link = result.link;
@@ -89,6 +92,7 @@ function activateSpeechRecognition() {
            console.log(`${title}: ${link}`);
          }
          inputTextarea.value += message + "\n";
+         saveToLocalStorage(inputTextarea.value);
        })
 
     })
@@ -127,3 +131,17 @@ function printDone() {
   var button = document.getElementById("status");
   button.value = "Done";
 }
+
+function saveToLocalStorage(output) {
+  localStorage.setItem("output", output);
+}
+
+function loadFromLocalStorage() {
+  const outputTextarea = document.getElementById("output");
+  const output = localStorage.getItem("output");
+  if (output) {
+    outputTextarea.value = output;
+  }
+}
+
+window.onload = loadFromLocalStorage;
