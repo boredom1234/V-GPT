@@ -12,7 +12,7 @@ function activateSpeechRecognition() {
 
   let conversation = "";
   const userName = "You:  ";
-  const botName = "AI:  ";
+  const botName = "Horizon:  ";
 
   utterance.voice = synthesis.getVoices()[107];
   recognition.lang = 'en-US';

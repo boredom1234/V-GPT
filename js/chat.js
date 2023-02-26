@@ -2,7 +2,7 @@ function sendMessage() {
   let status = false;
   let message = "";
   const userName = "You:  ";
-  const botName = "Horizon:  ";
+  const botName = "Horizon: ";
   const inputField = document.getElementById("input-field");
   let input = inputField.value;
   message += input;
