@@ -36,7 +36,7 @@ function sendMessage() {
       saveToLocalStorage(outputTextarea.value);
 
       // Fetch response from GoogleSearchAPI
-      fetch(`https://www.googleapis.com/customsearch/v1?key=AIzaSyBoLC8MJEULWEmgOLPZKWjWfcohYpigr8M&cx=56469cba6f5504b7d&q=${userInput}`)
+      fetch(`https://www.googleapis.com/customsearch/v1?key=AIzaSyBoLC8MJEULWEmgOLPZKWjWfcohYpigr8M&cx=56469cba6f5504b7d&q=${input}`)
         .then((response) => response.json())
         .then((data) => {
           let items = data.items;
