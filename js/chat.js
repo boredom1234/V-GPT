@@ -65,7 +65,7 @@ function sendMessage() {
     button.value = "Thinking?";
     inputField.value="";
   }
-  setTimeout(printDone, 8000);
+  setTimeout(printDone, 10000);
 }
 
 function printDone() {

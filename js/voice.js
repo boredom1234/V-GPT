@@ -119,7 +119,7 @@ function activateSpeechRecognition() {
   recognition.start();
 
   if(fetch){
-    setTimeout(printDone, 8000);
+    setTimeout(printDone, 10000);
   }
 
   window.addEventListener("beforeunload", () => {
