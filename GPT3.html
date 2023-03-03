@@ -2,6 +2,7 @@
 <html>
 <head>
   <title>HORIZON.ai</title>
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
   <script src="./js/voice.js"></script>
   <script src="./js/chat.js"></script>
   <link rel="stylesheet" type="text/css" href="./styles/style-main.css">
@@ -19,13 +20,16 @@
     <div class="us-ico" onclick="visitUs()">
       <img src = "link-icon.png" alt="us"/>
     </div>
+    <div class="GPT-Change">
+      <a href="GPT4.html">✅ GPT- 3 (Change)</a>
+    </div>
   <header><h1 data-value="HORIZON.ai">HORIZON.ai</h1></header>
   <div class="container">
     <div class="chat-box" id="chat-box">
       <p><strong><br><br><br><br><br><br><br><br><br><br></strong></p>
     </div>
     <div class="input-box">
-      <input type="text" id="input-field" placeholder="Ask anything...">
+      <input type="text" id="input-field" placeholder="Ask anything... (GPT-3)">
       <button id="send-button" onclick="sendMessage()">🔍</button>
       <button id="start-button" onclick="activateSpeechRecognition()">🎙️</button>
       <script>

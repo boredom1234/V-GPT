@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>HORIZON.ai</title>
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <script src="./js/bing-chat.js"></script>
+  <script src="./js/bing-voice.js"></script>
+  <link rel="stylesheet" type="text/css" href="./styles/style-main.css">
+  <link rel="stylesheet" type="text/css" href="./styles/effect.css">
+  <link rel="icon" type="image/png" href="icons8-blackhole-96.png">
+
+</head>
+<body>
+  <div class="logo" id="logo" ondrag="deleteEverything()">
+    <img src="icons8-blackhole-48.png">
+  </div>
+    <div class="github-ico" onclick="visitGithub()">
+      <img src = "github-icon.png" alt="github"/>
+    </div>
+    <div class="us-ico" onclick="visitUs()">
+      <img src = "link-icon.png" alt="us"/>
+    </div>
+    <div class="GPT-Change">
+      <a href="GPT3.html">✅ GPT- 4 (Change)</a>
+    </div>
+  <header><h1 data-value="HORIZON.ai">HORIZON.ai</h1></header>
+  <div class="container">
+    <div class="chat-box" id="chat-box">
+      <p><strong><br><br><br><br><br><br><br><br><br><br></strong></p>
+    </div>
+    <div class="input-box">
+      <input type="text" id="input-field" placeholder="Ask anything... (GPT-4)">
+      <button id="send-button" onclick="chatWithGPT4()">🔍</button>
+      <button id="start-button" onclick="activateBingRecognition()">🎙️</button>
+      <script>
+        var input = document.getElementById("input-field");
+        input.addEventListener("keypress", function(event) {
+        // If the user presses the "Enter" key on the keyboard
+        if (event.key === "Enter") {
+          event.preventDefault();
+          document.getElementById("send-button").click();
+          input.value="";
+        }
+        });
+      </script>
+    </div>
+    <div class="output-box">
+      <textarea id="output" rows="11" disabled placeholder="Results here..." ></textarea>
+    </div>
+    <div class="status-box">
+      <br>
+      <textarea id="status" rows="1" disabled></textarea>
+    </div>
+  </div>
+  <script>
+    function deleteEverything(){
+      const out = document.getElementById("output");
+      out.value = "";
+      localStorage.removeItem("output");
+    }
+  </script>
+    <script>
+      function visitGithub(){
+        window.open("https://github.com/boredom1234/V-GPT");
+      }
+     </script>
+    <script>
+      function visitUs(){
+        //window.open("https://www.google.com", "_blank", "width=600,height=400");
+        //window.open("https://www.youtube.com", "_blank", "width=600,height=400");
+      }
+    </script>
+  <script src="./js/effect.js"></script>
+</body>
+</html>
