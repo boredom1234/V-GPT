@@ -27,7 +27,10 @@ function chatWithGPT4() {
     console.log(response.data);
     console.log(response.data[0].text_response); // prints the "text_response" part only
     const cleanedText = response.data[0].text_response.replace(/\[\^[\d]+\^\]/g, "");
-    const cleanedText1 = cleanedText.replace(/\*/g, "");
+    let cleanedText1 = cleanedText.replace(/\*/g, "");
+    if (cleanedText1.includes("Bing")) {
+      cleanedText1 = cleanedText1.replace("Bing", "Horizon");
+    }
     console.log(cleanedText1);
     message += `${cleanedText1}`;
     outputBox.value += message + "\n";

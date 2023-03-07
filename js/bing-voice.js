@@ -8,9 +8,6 @@ function activateBingRecognition() {
   
     const utterance = new SpeechSynthesisUtterance();
   
-    const openaiApiKey = "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";
-    const openaiUrl = "https://api.openai.com/v1/engines/text-davinci-003/completions";
-  
     let conversation = "";
     const userName = "You:  ";
     const botName = "Horizon:  ";
@@ -71,11 +68,9 @@ function activateBingRecognition() {
     console.log(cleanedText1);
     message += `${cleanedText1}`;
     outputBox.value += message + "\n";
-    utterance.text = cleanedText1 + "\n" + ".........And here are a few additional online sources, if you want to have a look at.";
+    utterance.text = cleanedText1 + "\n" + "And here are a few additional online sources, if you want to have a look at.";
     synthesis.speak(utterance);
     saveToLocalStorage(outputBox.value);
-  
-  
   
         // Update the output textarea
         const inputTextarea = document.getElementById("output");

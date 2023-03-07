@@ -1,6 +1,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Mynerve&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Julee&family=Lato:ital,wght@1,300&family=Nunito&display=swap');
 
+#blob {
+  background-color: white;
+  height: 0.3vmax;
+  aspect-ratio: 1;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  translate: -50% -50%;
+  border-radius: 50%;
+  background: linear-gradient(to right, white, white);
+  opacity: 1;
+}
+
 header{
   font-family: 'Mynerve', cursive;
   text-align: center;
@@ -22,6 +35,7 @@ body {
   background-image: linear-gradient(to top, #18181c 0%, #27272e 100%);
   background-repeat: no-repeat;
   color: #DCDDDE;
+  overflow: hidden;
 }
 
 .GPT-Change{
@@ -75,8 +89,8 @@ a:hover
   height: 20px;
   filter: opacity(40%);
   filter: invert();
+  cursor: pointer;
 }
-
 
 .us-ico{
   display: flex;
@@ -89,18 +103,42 @@ a:hover
   height: 20px;
   filter: opacity(40%);
   filter: invert();
+  cursor: pointer;
+}
+
+.donate-ico{
+  display: flex;
+  position: fixed;
+  top: -3px;
+  right: 64px;
+  margin: 10px;
+  justify-content: flex-end;
+  width: 24px;
+  height: 24px;
+  filter: opacity(40%);
+  filter: invert();
+  cursor: pointer;
 }
 
 .github-ico:hover{
   filter: opacity(100%);
   scale: 1.1;
   animation: shake 0.3s ease-in-out;
+  filter: invert();
 }
 
 .us-ico:hover{
   filter: opacity(100%);
   scale: 1.2;
   animation: shake 0.3s ease-in-out;
+  filter: invert();
+}
+
+.donate-ico:hover{
+  filter: opacity(100%);
+  scale: 1.2;
+  animation: shake 0.3s ease-in-out;
+  filter: invert();
 }
 
 @keyframes shake {
