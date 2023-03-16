@@ -8,7 +8,7 @@ function chatWithGPT4() {
   message += input;
 
   const encodedParams = new URLSearchParams();
-  encodedParams.append("bing_u_cookie", "1jzQktpO4YH9AJoRpfCFmAk36IqusPvKy48G9m5smk0HfYjnGYcW93lF6Bl4WBd6a5bwYdixBLuVakb61vglUghkr5RmqFRe6zgClWv8yh_VEaw_HezGQutO5HSrqJkt-3cutb6rhoOfRL4k45BmDiP0FGuPzDoTDEx0vwx1GHUk3SI12YZFbfjGB2uS70L5bu4Lrr-wTAzxpPruvUSheFPQMz3OdCvcjno1tFgt5X2I");
+  encodedParams.append("bing_u_cookie", "1ViU_94ARH9X_0SGsD0maUBaWo80QCfcSI6DOjdalGlNqEG_ypfw69c3B97y5iT3ustvZSXm-suuJjyFDW60DbC0cyHEhDpl8OnAJazXmVcLu9zsfoiE3GUHwHBpLxjIKQj1USFFRONAg2L6cBMLEI9--AA0-hkzFvqfdIffUdETR9vSfnk6G8parHAfqkgMnzSBUjMA16yKkFB6FvkEBA789P7catraRVZSax8-uLck");
   encodedParams.append("question", questionInput.value);
 
   const options = {
