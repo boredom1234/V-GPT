@@ -50,7 +50,7 @@ function activateBingRecognition() {
 
   const options = {
     method: 'POST',
-    url: 'https://chatgpt-4-bing-ai-chat-api.p.rapidapi.com/chatgpt-4-bing-ai-chat-api/0.1/send-message/',
+    url: 'https://chatgpt-4-bing-ai-chat-api.p.rapidapi.com/chatgpt-4-bing-ai-chat-api/0.2/send-message/',
     headers: {
       'content-type': 'application/x-www-form-urlencoded',
       'X-RapidAPI-Key': '73ca85ca5fmsha9e8f26bfaa9215p1ed500jsn0fe03b356675',

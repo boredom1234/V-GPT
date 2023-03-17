@@ -8,7 +8,7 @@ function sendMessage() {
   message += input;
 
   // Fetch response from OpenAI
-  fetch("https://api.openai.com/v1/engines/text-davinci-003/completions", {
+  fetch("https://api.openai.com/v1/engines/text-davinci-003/completions", {//endpoint
     method: "POST",
     headers: {
       "Content-Type": "application/json",
