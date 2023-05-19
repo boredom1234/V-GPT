@@ -1,19 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Mynerve&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Julee&family=Lato:ital,wght@1,300&family=Nunito&display=swap');
 
-#blob {
-  background-color: white;
-  height: 0.3vmax;
-  aspect-ratio: 1;
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  translate: -50% -50%;
-  border-radius: 50%;
-  background: linear-gradient(to right, white, white);
-  opacity: 1;
-}
-
 header{
   font-family: 'Mynerve', cursive;
   text-align: center;
@@ -23,19 +10,36 @@ header{
 
 header h1 {
   color: white;
-  margin-bottom: 0px;
-  text-shadow: 0 0 30px white, 0 0 0px white, 0 0 10px white;
-  animation: blink 1s infinite;
+  margin-top: 2px;
+  margin-bottom: 10px;
+  text-shadow: 0 0 30px rgb(147, 205, 196), 0 0 0px rgb(255, 255, 255), 0 0 10px white;
+  animation: fadeinout 1.5s infinite;
+}
+
+@keyframes fadeinout
+{
+  0%{
+    opacity:0.7;
+  }
+  50%
+  {
+    opacity:1;
+  }
+  100%
+  {
+    opacity:0.7;
+  }
 }
 
 body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
   margin: 0;
   padding: 0;
-  background-image: linear-gradient(to top, #18181c 0%, #27272e 100%);
+  background: linear-gradient(135deg,rgba(13, 13, 24, 0.998),#0f2940, #07393d,#095347);
   background-repeat: no-repeat;
   color: #DCDDDE;
   overflow: hidden;
+  height: 100vh;
 }
 
 .GPT-Change{
@@ -180,7 +184,13 @@ a:hover
 .container {
   display: flex;
   flex-direction: column;
-  padding:10px 30px 10px 30px;
+  padding:10px 60px 10px 60px;
+  background: rgb(11,15,25);
+  margin-left: 40px;
+  margin-right: 40px;
+  margin-bottom: 30px;
+  border-radius: 7px;
+  box-shadow: 0 5px 30px rgba(0, 0, 0, .2);
 }
 
 .chat-box {
@@ -206,9 +216,8 @@ a:hover
   display: flex;
   margin: 5px;
   margin-left: 12px;
-  background-color: #2a2a31;
-  border-radius: 15px;
-  box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.3);
+  background: rgb(31,41,55);
+  border-radius: 7px;
   position: relative;
   width: 98.9%;
 }
@@ -218,10 +227,13 @@ a:hover
   top:0;
   right: 0;
   bottom: 0;
-  border-radius: 15px;
+  background: rgba(0, 0, 0, 0);
+  border-radius: 7px;
   font-size: 19px;
 }
-
+#send-button:hover {
+  background: rgba(0, 0, 0, 0.2);
+}
 .status-box{
   justify-content: center;
   align-items: center;
@@ -261,11 +273,11 @@ button:hover {
   margin: 5px;
   padding: 5px;
   border: 0px solid #7289DA;
-  border-radius: 15px;
+  border-radius: 7px;
   width: 98%;
   resize: none;
-  background-color: #2a2a31;
-  font-size: 16px;
+  background: rgb(31,41,55);
+  font-size: 15px;
   font-family: 'Nunito', sans-serif;
   font-weight:lighter;
   color: #DCDDDE;
@@ -286,13 +298,12 @@ button:hover {
   margin-right: 55px; /*space between buttons*/
   padding: 0px 7px;
   border: none;
-  background-color: #2a2a31;
+  background: rgba(0, 0, 0, 0);
   color: #FFF;
   cursor: pointer;
   font-size: 24px;
   text-align: center;
-  border-radius: 10px;
-  box-shadow: 0px 0px 0px 0px rgba(0,0,0,0.3);
+  border-radius: 7px;
 }
 
 #status {
@@ -303,14 +314,14 @@ button:hover {
   font-style: italic;
   font-weight: bold;
   margin: 10px;
-  background-color: #2F3136;
+  background: rgba(0, 0, 0, 0.2);
   resize: none;
   border: px solid #7289DA;
-  border-radius: 15px;
+  border-radius: 10px;
 }
 
 #start-button:hover {
-  background-color: #202025;
+  background: rgba(0, 0, 0, 0.2);
 }
 
 @media screen and (max-width: 600px) {
@@ -434,3 +445,53 @@ box-shadow: none;
   }
   }
 }
+
+.loader_bg{
+  position: fixed;
+  z-index: 999999;
+  background: #FFF;
+  width: 100%;
+  height: 100%;
+}
+
+.loader{
+  border: 0 solid transparent;
+  border-radius: 50%;
+  width: 150px;
+  height: 150px;
+  position: absolute;
+  top: calc(50vh - 75px);
+  left: calc(50vw - 75px);
+}
+
+.loader:before, .loader:after{
+  content:'';
+  border: 1em solid #ff5733;
+  border-radius: 50%;
+  width: inherit;
+  height: inherit;
+  position: absolute;
+  top: 0;
+  left: 0;
+  animation: loader 2s linear infinite;
+  opacity: 0;
+}
+
+.loader:before{
+  animation-delay: .5s;
+}
+
+@keyframes loader{
+  0%{
+    transform: scale(0);
+    opacity: 0;
+  }
+  50%{
+    opacity: 1;
+  }
+  100%{
+    transform: scale(1);
+    opacity: 0;
+  }
+}
+
